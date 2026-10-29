@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIC TEST</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <header>
+    <h1>LOGIC TEST</h1>
+    <p>Type in your suggested response and click enter</p>
+  </header>
+
+  <main>
+    <div class="card" data-name="caughtspeeding">
+      <h2>1. caughtSpeeding</h2>
+      <p class="ask">You are driving a little too fast, and a police officer stops you. Write code to compute the result, encoded as a number: 0=no ticket, 1=small ticket, 2=big ticket. If the speed is 60 or less, the result is 0. If speed is between 61 and 80 inclusive, the result is 1. If speed is 81 or more, the result is 2. Unless it is your birthday -- on that day, your speed can be 5 higher in all cases.
+        Examples
+        <ul>
+          <li>caughtSpeeding( 60, false ) -- 0</li>
+          <li>caughtSpeeding( 65, false ) -- 1</li>
+          <li>caughtSpeeding( 65, true ) -- 0</li>
+        </ul>
+      </p>
+      <div class="line"><label for="caughtSpeeding-speed">speed</label><input type="number" id="caughtSpeeding-speed"></div>
+      <div class="line"><label for="caughtSpeeding-isBirthday">isBirthday</label><input type="checkbox" id="caughtSpeeding-isBirthday"></div>
+      <button onclick="solve_caughtSpeeding()">Enter</button>
+      <div class="answer" id="caughtSpeeding-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="cigarparty">
+      <h2>2. cigarParty</h2>
+      <p class="ask">When squirrels get together for a party, they like to have cigars. A squirrel party is successful when the number of cigars is between 40 an 60, inclusive. Unless it is the weekend, in which case there is no upper bound on the number of cigars. Return true if the party with the given values is successful, or false otherwise.
+        Examples
+        <ul>
+          <li>cigarParty( 30, false ) -- false</li>
+          <li>cigarParty( 50, false ) -- true</li>
+          <li>cigarParty( 70, true ) -- true</li>
+        </ul>
+      </p>
+      <div class="line"><label for="cigarParty-cigars">cigars</label><input type="number" id="cigarParty-cigars"></div>
+      <div class="line"><label for="cigarParty-isWeekend">isWeekend</label><input type="checkbox" id="cigarParty-isWeekend"></div>
+      <button onclick="solve_cigarParty()">Enter</button>
+      <div class="answer" id="cigarParty-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="datefashion">
+      <h2>3. dateFashion</h2>
+      <p class="ask">You and your date are trying to get a table at a restaurant. The parameter "you" is the stylishness of your clothes, in the range 0..10, and "date" is the stylishness of your date's clothes. The result getting the table is encoded as a number value with 0=no, 1=maybe, 2=yes. If either of you is very stylish, 8 or more, then the result is 2 (yes). With the exception that if either of you has style of 2 or less, then the result is 0 (no). Otherwise the result is 1 (maybe).
+        Examples 
+        <ul>
+          <li>dateFashion( 5, 10 ) -- 2</li>
+          <li>dateFashion( 5, 2 ) -- 0</li>
+          <li>dateFashion( 5, 5 ) -- 1</li>
+        </ul>
+      </p>
+      <div class="line"><label for="dateFashion-you">you</label><input type="number" id="dateFashion-you"></div>
+      <div class="line"><label for="dateFashion-date">date</label><input type="number" id="dateFashion-date"></div>
+      <button onclick="solve_dateFashion()">Enter</button>
+      <div class="answer" id="dateFashion-answer"></div>
+    </div>
+
+    <div class="card" data-name="alarmclock">
+      <h2>4. alarmClock</h2>
+      <p class="ask">Given a day of the week encoded as 0=Sun, 1=Mon, 2=Tue, ...6=Sat, and a boolean indicating if we are on vacation, return a string of the form "7:00" indicating when the alarm clock should ring. Weekdays, the alarm should be "7:00" and on the weekend it should be "10:00". Unless we are on vacation -- then on weekdays it should be "10:00" and weekends it should be "off".
+        Examples
+        <ul>
+          <li>alarmClock(1, false) → 7:00</li>
+          <li>alarmClock(5, false) → 7:00</li>
+          <li>alarmClock(0, false) → 10:00</li>
+        </ul>
+      </p>
+
+      <div class="line"><label for="alarmClock-day">day</label><input type="number" id="alarmClock-day"></div>
+      <div class="line"><label for="alarmClock-vacation">vacation</label><input type="checkbox" id="alarmClock-vacation"></div>
+      <button onclick="solve_alarmClock()">Enter</button>
+      <div class="answer" id="alarmClock-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="answercell">
+      <h2>5. answerCell</h2>
+      <p class="ask">Your cell phone rings. Return true if you should answer it. Normally you answer, except in the morning you only answer if it is your mom calling. In all cases, if you are asleep, you do not answer.
+        Examples
+        <ul>
+          <li>answerCell(false, false, false) → true</li>
+          <li>answerCell(false, false, true) → false</li>
+          <li>answerCell(true, false, false) → false</li>
+        </ul>
+      </p>
+
+      <div class="line"><label for="answerCell-isMorning">isMorning</label><input type="checkbox" id="answerCell-isMorning"></div>
+      <div class="line"><label for="answerCell-isMom">isMom</label><input type="checkbox" id="answerCell-isMom"></div>
+      <div class="line"><label for="answerCell-isAsleep">isAsleep</label><input type="checkbox" id="answerCell-isAsleep"></div>
+      <button onclick="solve_answerCell()">Enter</button>
+      <div class="answer" id="answerCell-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="blueticket">
+      <h2>6. blueTicket</h2>
+      <p class="ask">You have a blue lottery ticket, with ints a, b, and c on it. This makes three pairs, which we'll call ab, bc, and ac. Consider the sum of the numbers in each pair. If any pair sums to exactly 10, the result is 10. Otherwise if the ab sum is exactly 10 more than either bc or ac sums, the result is 5. Otherwise the result is 0.
+        Examples
+        <ul>
+          <li>blueTicket(9, 1, 0) → 10</li>
+          <li>blueTicket(9, 2, 0) → 0</li>
+          <li>blueTicket(6, 1, 4) → 10</li>
+        </ul>
+      </p>
+      <div class="line"><label for="blueTicket-a">a</label><input type="number" id="blueTicket-a"></div>
+      <div class="line"><label for="blueTicket-b">b</label><input type="number" id="blueTicket-b"></div>
+      <div class="line"><label for="blueTicket-c">c</label><input type="number" id="blueTicket-c"></div>
+      <button onclick="solve_blueTicket()">Enter</button>
+      <div class="answer" id="blueTicket-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="fizzstring">
+      <h2>7. fizzString</h2>
+      <p class="ask">Given a string str, if the string starts with "f" return "Fizz". If the string ends with "b" return "Buzz". If both the "f" and "b" conditions are true, return "FizzBuzz". In all other cases, return the string unchanged.
+        Examples
+        <ul>
+          <li>fizzString('fig') → Fizz</li>
+          <li>fizzString('dib') → Buzz</li>
+          <li>fizzString('fib') → FizzBuzz</li>
+        </ul>
+    </p>
+      <div class="line"><label for="fizzString-str">str</label><input type="text" id="fizzString-str"></div>
+      <button onclick="solve_fizzString()">Enter</button>
+      <div class="answer" id="fizzString-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="fizzstring2">
+      <h2>8. fizzString2</h2>
+      <p class="ask">Given a number n, return the string form of the number followed by "!". So the number 6 yields "6!". Except if the number is divisible by 3 use "Fizz" instead of the number, and if the number is divisible by 5 use "Buzz", and if divisible by both 3 and 5, use "FizzBuzz". Note: the % "mod" operator computes the remainder after division, so 23 % 10 yields 3. What will the remainder be when one number divides evenly into another?
+        Examples
+        <ul>
+          <li>fizzString2(1) → 1!</li>
+          <li>fizzString2(2) → 2!</li>
+          <li>fizzString2(3) → Fizz!</li>
+        <ul>
+
+      </p>
+      <div class="line"><label for="fizzString2-n">n</label><input type="number" id="fizzString2-n"></div>
+      <button onclick="solve_fizzString2()">Enter</button>
+      <div class="answer" id="fizzString2-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="greenticket">
+      <h2>9. greenTicket</h2>
+      <p class="ask">You have a green lottery ticket, with ints a, b, and c on it. If the numbers are all different from each other, the result is 0. If all of the numbers are the same, the result is 20. If two of the numbers are the same, the result is 10.
+        Examples
+        <ul>
+          <li>greenTicket(1, 2, 3) → 0</li>
+          <li>greenTicket(2, 2, 2) → 20</li>
+          <li>greenTicket(1, 1, 2) → 10</li>
+      </ul>
+    </p>
+      <div class="line"><label for="greenTicket-a">a</label><input type="number" id="greenTicket-a"></div>
+      <div class="line"><label for="greenTicket-b">b</label><input type="number" id="greenTicket-b"></div>
+      <div class="line"><label for="greenTicket-c">c</label><input type="number" id="greenTicket-c"></div>
+      <button onclick="solve_greenTicket()">Enter</button>
+      <div class="answer" id="greenTicket-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="in1to10">
+      <h2>10. in1To10</h2>
+      <p class="ask">Given a number n, return true if n is in the range 1..10, inclusive. Unless "outsideMode" is true, in which case return true if the number is less or equal to 1, or greater or equal to 10.
+        Examples
+        <ul>
+          <li>in1To10(5, false) → true</li>
+          <li>in1To10(11, false) → false</li>
+          <li>in1To10(11, true) → true</li>
+      </ul>
+    </p>
+      <div class="line"><label for="in1To10-n">n</label><input type="number" id="in1To10-n"></div>
+      <div class="line"><label for="in1To10-outsideMode">outsideMode</label><input type="checkbox" id="in1To10-outsideMode"></div>
+      <button onclick="solve_in1To10()">Enter</button>
+      <div class="answer" id="in1To10-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="inorder">
+      <h2>11. inOrder</h2>
+      <p class="ask">Given three ints, a b c, return true if b is greater than a, and c is greater than b. However, with the exception that if "bOk" is true, b does not need to be greater than a.
+        Examples
+        <ul>
+          <li>inOrder(1, 2, 4, false) → true</li>
+          <li>inOrder(1, 2, 1, false) → false</li>
+          <li>inOrder(1, 1, 2, true) → true</li>
+        </ul>
+      </p>
+      <div class="line"><label for="inOrder-a">a</label><input type="number" id="inOrder-a"></div>
+      <div class="line"><label for="inOrder-b">b</label><input type="number" id="inOrder-b"></div>
+      <div class="line"><label for="inOrder-c">c</label><input type="number" id="inOrder-c"></div>
+      <div class="line"><label for="inOrder-bOk">bOk</label><input type="checkbox" id="inOrder-bOk"></div>
+      <button onclick="solve_inOrder()">Enter</button>
+      <div class="answer" id="inOrder-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="inorderequal">
+      <h2>12. inOrderEqual</h2>
+      <p class="ask">Given three ints, a b c, return true if they are in strict increasing order, such as 2 5 11, or 5 6 7, but not 6 5 7 or 5 5 7. However, with the exception that if "equalOk" is true, equality is allowed, such as 5 5 7 or 5 5 5.
+        Examples
+        <ul>
+          <li>inOrderEqual(2, 5, 11, false) → true</li>
+          <li>inOrderEqual(5, 7, 6, false) → false</li>
+          <li>inOrderEqual(5, 5, 7, true) → true</li>
+      <ul>
+
+      </p>
+      <div class="line"><label for="inOrderEqual-a">a</label><input type="number" id="inOrderEqual-a"></div>
+      <div class="line"><label for="inOrderEqual-b">b</label><input type="number" id="inOrderEqual-b"></div>
+      <div class="line"><label for="inOrderEqual-c">c</label><input type="number" id="inOrderEqual-c"></div>
+      <div class="line"><label for="inOrderEqual-equalOk">equalOk</label><input type="checkbox" id="inOrderEqual-equalOk"></div>
+      <button onclick="solve_inOrderEqual()">Enter</button>
+      <div class="answer" id="inOrderEqual-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="lastdigitofthree">
+      <h2>13. lastDigitOfThree</h2>
+      <p class="ask">Given three ints, a b c, return true if two or more of them have the same rightmost digit. The ints are non-negative. Note: the % "mod" operator computes the remainder, e.g. 17 % 10 is 7.
+        Examples
+        <ul>
+        <li>lastDigitOfThree(23, 19, 13) → true</li>
+        <li>lastDigitOfThree(23, 19, 12) → false</li>
+        <li>lastDigitOfThree(23, 19, 3) → true</li>
+      </ul>
+    </p>
+      <div class="line"><label for="lastDigitOfThree-a">a</label><input type="number" id="lastDigitOfThree-a"></div>
+      <div class="line"><label for="lastDigitOfThree-b">b</label><input type="number" id="lastDigitOfThree-b"></div>
+      <div class="line"><label for="lastDigitOfThree-c">c</label><input type="number" id="lastDigitOfThree-c"></div>
+      <button onclick="solve_lastDigitOfThree()">Enter</button>
+      <div class="answer" id="lastDigitOfThree-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="less20">
+      <h2>14. less20</h2>
+      <p class="ask">Return true if the given non-negative number is 1 or 2 less than a multiple of 20. So for example 38 and 39 return true, but 40 returns false.
+        Examples
+        <ul>
+        <li>less20(18) → true</li>
+        <li>less20(19) → true</li>
+        <li>less20(20) → false</li>
+      </ul>
+    </p>
+      <div class="line"><label for="less20-n">n</label><input type="number" id="less20-n"></div>
+      <button onclick="solve_less20()">Enter</button>
+      <div class="answer" id="less20-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="lessby10">
+      <h2>15. lessBy10</h2>
+      <p class="ask">Given three ints, a b c, return true if one of them is 10 or more less than one of the others.
+        Examples
+        <ul>
+            <li>lessBy10(1, 7, 11) → true</li>
+            <li>lessBy10(1, 7, 10) → false</li>
+            <li>lessBy10(11, 1, 7) → true</li>
+        </ul>
+    </p>
+      <div class="line"><label for="lessBy10-a">a</label><input type="number" id="lessBy10-a"></div>
+      <div class="line"><label for="lessBy10-b">b</label><input type="number" id="lessBy10-b"></div>
+      <div class="line"><label for="lessBy10-c">c</label><input type="number" id="lessBy10-c"></div>
+      <button onclick="solve_lessBy10()">Enter</button>
+      <div class="answer" id="lessBy10-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="love6">
+      <h2>16. love6</h2>
+      <p class="ask">The number 6 is a truly great number. Given two numbers, a and b, return true if either one is 6. Or if their sum or difference is 6. Note: the function Math.abs(num) computes the absolute value of a number.
+        Examples
+        <ul>
+            <li>love6(6, 4) → true</li>
+            <li>love6(4, 5) → false</li>
+            <li>love6(1, 5) → true</li>
+        </ul>
+      </p>
+      <div class="line"><label for="love6-a">a</label><input type="number" id="love6-a"></div>
+      <div class="line"><label for="love6-b">b</label><input type="number" id="love6-b"></div>
+      <button onclick="solve_love6()">Enter</button>
+      <div class="answer" id="love6-answer"></div>
+    </div>
+
+    
+
+
+    <div class="card" data-name="nearten">
+      <h2>17. nearTen</h2>
+      <p class="ask">Given a non-negative number "num", return true if num is within 2 of a multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5) is 2.
+        Examples
+        <ul>
+            <li>nearTen(12) → true</li>
+            <li>nearTen(17) → false</li>
+            <li>nearTen(19) → true</li>
+        </ul>
+      </p>
+      <div class="line"><label for="nearTen-num">num</label><input type="number" id="nearTen-num"></div>
+      <button onclick="solve_nearTen()">Enter</button>
+      <div class="answer" id="nearTen-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="old35">
+      <h2>18. old35</h2>
+      <p class="ask">Return true if the given non-negative number is a multiple of 3 or 5, but not both. Use the % "mod" operator.
+        Examples
+        <ul>
+          <li>old35(3) → true</li>
+          <li>old35(10) → true</li>
+          <li>old35(15) → false</li>
+        </ul>
+      </p>
+      <div class="line"><label for="old35-n">n</label><input type="number" id="old35-n"></div>
+      <button onclick="solve_old35()">Enter</button>
+      <div class="answer" id="old35-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="redticket">
+      <h2>19. redTicket</h2>
+      <p class="ask">You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2. If they are all the value 2, the result is 10. Otherwise if they are all the same, the result is 5. Otherwise so long as both b and c are different from a, the result is 1. Otherwise the result is 0.
+        Examples
+        <ul>
+              <li>redTicket(2, 2, 2) → 10</li>
+              <li>redTicket(2, 2, 1) → 0</li>
+              <li>redTicket(0, 0, 0) → 5</li>
+        </ul>
+      </p>
+      <div class="line"><label for="redTicket-a">a</label><input type="number" id="redTicket-a"></div>
+      <div class="line"><label for="redTicket-b">b</label><input type="number" id="redTicket-b"></div>
+      <div class="line"><label for="redTicket-c">c</label><input type="number" id="redTicket-c"></div>
+      <button onclick="solve_redTicket()">Enter</button>
+      <div class="answer" id="redTicket-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="sortasum">
+      <h2>20. sortaSum</h2>
+      <p class="ask">Given 2 ints, a and b, return their sum. However, sums in the range 10..19 inclusive, are forbidden, so in that case just return 20.
+        Examples
+        <ul>
+          <li>sortaSum( 3, 4 ) -- 7</li>
+          <li>sortaSum( 9, 4 ) -- 20</li>
+          <li>sortaSum( 10, 11 ) -- 21</li>
+        </ul>
+      </p>
+      <div class="line"><label for="sortaSum-a">a</label><input type="number" id="sortaSum-a"></div>
+      <div class="line"><label for="sortaSum-b">b</label><input type="number" id="sortaSum-b"></div>
+      <button onclick="solve_sortaSum()">Enter</button>
+      <div class="answer" id="sortaSum-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="squirrelplay">
+      <h2>21. squirrelPlay</h2>
+      <p class="ask">The squirrels in Palo Alto spend most of the day playing. In particular, they play if the temperature is between 60 and 90 (inclusive). Unless it is summer, then the upper limit is 100 instead of 90. Given a number temperature and a boolean isSummer, return true if the squirrels play and false otherwise.
+        Examples
+        <ul>
+          <li>squirrelPlay ( 70, false ) -- true</li>
+          <li>squirrelPlay ( 95, false ) -- false</li>
+          <li>squirrelPlay ( 95, true ) -- true</li>
+        </ul>
+      </p>
+      <div class="line"><label for="squirrelPlay-temp">temp</label><input type="number" id="squirrelPlay-temp"></div>
+      <div class="line"><label for="squirrelPlay-isSummer">isSummer</label><input type="checkbox" id="squirrelPlay-isSummer"></div>
+      <button onclick="solve_squirrelPlay()">Enter</button>
+      <div class="answer" id="squirrelPlay-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="teensum">
+      <h2>22. teenSum</h2>
+      <p class="ask">Given 2 ints, a and b, return their sum. However, "teen" values in the range 13..19 inclusive, are extra lucky. So if either value is a teen, just return 19.
+        Examples
+        <ul>
+          <li>teenSum(3, 4) → 7</li>
+          <li>teenSum(10, 13) → 19</li>
+          <li>teenSum(13, 2) → 19</li>
+        </ul>
+      </p>
+      <div class="line"><label for="teenSum-a">a</label><input type="number" id="teenSum-a"></div>
+      <div class="line"><label for="teenSum-b">b</label><input type="number" id="teenSum-b"></div>
+      <button onclick="solve_teenSum()">Enter</button>
+      <div class="answer" id="teenSum-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="sumlimit">
+      <h2>23. sumLimit</h2>
+      <p class="ask">Given 2 non-negative numbers, a and b, return their sum, so long as the sum has the same number of digits as a. If the sum has more digits than a, just return a without b. (Note: one way to compute the number of digits of a non-negative number n is to convert it to a string with String(n) and then check the length of the string.)
+        Examples
+        <ul>
+          <li>sumLimit(2, 3) → 5</li>
+          <li>sumLimit(8, 3) → 8</li>
+          <li>sumLimit(8, 1) → 9</li>
+        </ul>
+      </p>
+      <div class="line"><label for="sumLimit-a">a</label><input type="number" id="sumLimit-a"></div>
+      <div class="line"><label for="sumLimit-b">b</label><input type="number" id="sumLimit-b"></div>
+      <button onclick="solve_sumLimit()">Enter</button>
+      <div class="answer" id="sumLimit-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="teaparty">
+      <h2>24. teaParty</h2>
+      <p class="ask">We are having a party with amounts of tea and candy. Return the outcome of the party encoded as 0=bad, 1=good, or 2=great. A party is good (1) if both tea and candy are at least 5. However, if either tea or candy is at least double the amount of the other one, the party is great (2). However, in all cases, if either tea or candy is less than 5, the party is always bad (0).
+        Examples
+        <ul>
+          <li>teaParty(6, 8) → 1</li>
+          <li>teaParty(3, 8) → 0</li>
+          <li>teaParty(20, 6) → 2</li>
+        </ul>
+      </p>
+      <div class="line"><label for="teaParty-tea">tea</label><input type="number" id="teaParty-tea"></div>
+      <div class="line"><label for="teaParty-candy">candy</label><input type="number" id="teaParty-candy"></div>
+      <button onclick="solve_teaParty()">Enter</button>
+      <div class="answer" id="teaParty-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="specialeleven">
+      <h2>25. specialEleven</h2>
+      <p class="ask">We'll say a number is special if it is a multiple of 11 or if it is one more than a multiple of 11. Return true if the given non-negative number is special. Use the % "mod" operator.
+        Examples
+        <ul>
+          <li>specialEleven(22) → true</li>
+          <li>specialEleven(23) → true</li>
+          <li>specialEleven(24) → false</li>
+        </ul>
+      </p>
+      <div class="line"><label for="specialEleven-n">n</label><input type="number" id="specialEleven-n"></div>
+      <button onclick="solve_specialEleven()">Enter</button>
+      <div class="answer" id="specialEleven-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="sharedigit">
+      <h2>26. shareDigit</h2>
+      <p class="ask">Given two ints, each in the range 10..99, return true if there is a digit that appears in both numbers, such as the 2 in 12 and 23. (Note: division, e.g. n/10, gives the left digit while the % "mod" n%10 gives the right digit.)
+        Examples
+        <ul>
+          <li>shareDigit(12, 23) → true</li>
+          <li>shareDigit(12, 43) → false</li>
+          <li>shareDigit(12, 44) → false</li>
+        </ul>
+      </p>
+      <div class="line"><label for="shareDigit-a">a</label><input type="number" id="shareDigit-a"></div>
+      <div class="line"><label for="shareDigit-b">b</label><input type="number" id="shareDigit-b"></div>
+      <button onclick="solve_shareDigit()">Enter</button>
+      <div class="answer" id="shareDigit-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="twoasone">
+      <h2>27. twoAsOne</h2>
+      <p class="ask">Given three ints, a b c, return true if it is possible to add two of the ints to get the third.
+        Examples
+        <ul>
+          <li>twoAsOne(1, 2, 3) → true</li>
+          <li>twoAsOne(3, 1, 2) → true</li>
+          <li>twoAsOne(3, 2, 2) → false</li>
+        </ul>
+      </p>
+      <div class="line"><label for="twoAsOne-a">a</label><input type="number" id="twoAsOne-a"></div>
+      <div class="line"><label for="twoAsOne-b">b</label><input type="number" id="twoAsOne-b"></div>
+      <div class="line"><label for="twoAsOne-c">c</label><input type="number" id="twoAsOne-c"></div>
+      <button onclick="solve_twoAsOne()">Enter</button>
+      <div class="answer" id="twoAsOne-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="withoutdoubles">
+      <h2>28. withoutDoubles</h2>
+      <p class="ask">Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is true, if the two dice show the same value, increment one die to the next value, wrapping around to 1 if its value was 6.
+        Examples
+        <ul>
+          <li>withoutDoubles(2, 3, true) → 5</li>
+          <li>withoutDoubles(3, 3, true) → 7</li>
+          <li>withoutDoubles(3, 3, false) → 6</li>
+        </ul>
+      </p>
+      <div class="line"><label for="withoutDoubles-die1">die1</label><input type="number" id="withoutDoubles-die1"></div>
+      <div class="line"><label for="withoutDoubles-die2">die2</label><input type="number" id="withoutDoubles-die2"></div>
+      <div class="line"><label for="withoutDoubles-noDoubles">noDoubles</label><input type="checkbox" id="withoutDoubles-noDoubles"></div>
+      <button onclick="solve_withoutDoubles()">Enter</button>
+      <div class="answer" id="withoutDoubles-answer"></div>
+    </div>
+
+
+
+    <div class="card" data-name="maxmod5">
+      <h2>29. maxMod5</h2>
+      <p class="ask">Given two numbers, return whichever value is larger. However if the two values have the same remainder when divided by 5, then the return the smaller value. However, in all cases, if the two values are the same, return 0. Note: the % "mod" operator computes the remainder, e.g. 7 % 5 is 2.
+        Examples
+        <ul>
+          <li>maxMod5(2, 3) → 3</li>
+          <li>maxMod5(6, 2) → 6</li>
+          <li>maxMod5(3, 2) → 3</li>
+        </ul>
+      </p>
+      <div class="line"><label for="maxMod5-a">a</label><input type="number" id="maxMod5-a"></div>
+      <div class="line"><label for="maxMod5-b">b</label><input type="number" id="maxMod5-b"></div>
+      <button onclick="solve_maxMod5()">Enter</button>
+      <div class="answer" id="maxMod5-answer"></div>
+    </div>
+
+
+    <div class="card" data-name="more20">
+      <h2>30. more20</h2>
+      <p class="ask">Return true if the given non-negative number is 1 or 2 more than a multiple of 20.
+        Examples
+        <ul>
+          <li>more20(20) → false</li>
+          <li>more20(21) → true</li>
+          <li>more20(22) → true</li>
+        </ul>
+      </p>
+      <div class="line"><label for="more20-n">n</label><input type="number" id="more20-n"></div>
+      <button onclick="solve_more20()">Enter</button>
+      <div class="answer" id="more20-answer"></div>
+    </div>
+
+  </main>
+
+  <script src="index.js"></script>
+
+</body>
+</html>
